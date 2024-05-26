@@ -1,0 +1,14 @@
+import subprocess
+
+path = ""
+file = ""
+
+cmd = "cd " + path
+subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+cmd = "pyinstaller --onefile " + file
+result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+# 输出执行结果
+print("stdout:", result.stdout)
+print("stderr:", result.stderr)
